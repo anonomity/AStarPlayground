@@ -1,0 +1,78 @@
+[gd_scene load_steps=5 format=3 uid="uid://cielb8y0hnm3a"]
+
+[ext_resource type="Texture2D" uid="uid://bagdlyiasdy07" path="res://tileset.png" id="1_pq8q7"]
+[ext_resource type="Script" uid="uid://iye4jl0iac15" path="res://Astar.gd" id="1_pyidc"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pyidc"]
+texture = ExtResource("1_pq8q7")
+0:0/0 = 0
+0:1/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_vho56"]
+sources/0 = SubResource("TileSetAtlasSource_pyidc")
+
+[node name="root" type="Node2D" unique_id=460214417]
+script = ExtResource("1_pyidc")
+
+[node name="floorLayer" type="TileMapLayer" parent="." unique_id=1657584373]
+tile_set = SubResource("TileSet_vho56")
+
+[node name="gridLayer" type="TileMapLayer" parent="." unique_id=99130338]
+tile_set = SubResource("TileSet_vho56")
+
+[node name="debugLayer" type="TileMapLayer" parent="." unique_id=984772486]
+tile_set = SubResource("TileSet_vho56")
+
+[node name="obstacleLayer" type="TileMapLayer" parent="." unique_id=2130088993]
+tile_set = SubResource("TileSet_vho56")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=897388041]
+position = Vector2(374, 267)
+zoom = Vector2(1.945, 1.945)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=133156517]
+
+[node name="Panel" type="Panel" parent="CanvasLayer" unique_id=72413330]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 67.0
+grow_horizontal = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Panel" unique_id=1499091057]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="EUCLIDEANButton" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1983406973]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "EUCLIDEAN"
+
+[node name="MANHATTANButton" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=141640263]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "MANHATTAN"
+
+[node name="OCTILEButton" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=2100215738]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "OCTILE"
+
+[node name="CHEBYSHEVButton" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=903261867]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "CHEBYSHEV"
+
+[node name="MAXButton" type="Button" parent="CanvasLayer/Panel/HBoxContainer" unique_id=1438816155]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+text = "MAX"
