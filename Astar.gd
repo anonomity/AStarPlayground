@@ -29,6 +29,7 @@ var ashartgrid: AStarGrid2D
 var obstacle_arr = []
 
 func _ready() -> void:
+	
 	euclidean_button.pressed.connect(change_heuristic.bind(0))
 	manhattan_button.pressed.connect(change_heuristic.bind(1))
 	octile_button.pressed.connect(change_heuristic.bind(2))
@@ -36,6 +37,7 @@ func _ready() -> void:
 	max_button.pressed.connect(change_heuristic.bind(4))
 	
 	ashartgrid  = AStarGrid2D.new()
+	ashartgrid.diagonal_mode = AStarGrid2D.DIAGONAL_MODE_NEVER
 	
 	var grid_width = 32
 	var grid_height = 32
